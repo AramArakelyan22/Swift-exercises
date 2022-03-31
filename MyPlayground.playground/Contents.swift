@@ -1,5 +1,54 @@
 //import UIKit
 import Foundation
+
+let VOWELS: [Character] = ["A", "E", "I", "O", "U"]
+let CONSONANTS: [Character] = [ "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+
+func checkForVowelOrConsonant (stringValue: String) -> (Int, Int) {
+    var vowelsCount = 0
+    var consonantCount = 0
+    for item in stringValue.uppercased() {
+        if VOWELS.contains(item) {
+            vowelsCount+=1
+        }
+        else if CONSONANTS.contains(item) {
+            consonantCount+=1
+        }
+        else {
+            print("\(item) is not a letter")
+        }
+    }
+    return (vowelsCount, consonantCount)
+}
+
+//print(checkForVowelOrConsonant(stringValue: "Aram iutrs7"))
+
+
+func checkForVowelOrConsonant2 (stringValue: String) -> (Int, Int) {
+    let vowelsCount = stringValue.uppercased().filter({(item) -> Bool in VOWELS.contains(item)}).count
+    let consonantCount = stringValue.uppercased().filter({(item) -> Bool in CONSONANTS.contains(item)}).count
+    
+    print(vowelsCount)
+    print(consonantCount)
+    
+    return (vowelsCount, consonantCount)
+}
+
+
+//print(checkForVowelOrConsonant2(stringValue: "Aram iutrs7"))
+
+
+
+func checkForThreeSameLetter(firstValue: String, secondValue: String) -> Bool {
+    guard firstValue.count == secondValue.count else { return false}
+    
+    //Here should be code
+    
+    return true
+}
+
+print(checkForThreeSameLetter(firstValue: "Aram", secondValue: "jhsd"))
+
 //
 //let number  = 5
 //
